@@ -1,0 +1,20 @@
+<html xmlns:th="http://www.thymeleaf.org">
+ <body>
+  <div th:insert="menu.html"></div>
+   <div class='dv' th:if="${plist.empty}">
+    <h2 style='color:red'>Product list is empty</h2>
+   </div>
+  <table border='1' class='talist' th:if="${!plist.empty}">
+   <tr>
+    <th>Product Id</th><th>Product name</th><th>Product brand</th><th>Product price</th>
+   </tr>
+     <tr th:each="product:${plist}">
+      <td th:text="${product.pid}"></td>
+      <td th:text="${product.name}"></td>
+      <td th:text="${product.brand}"></td>
+      <td th:text="${product.price}"></td>
+     </tr>
+  </table>
+  </c:if>
+ </body>
+</html>

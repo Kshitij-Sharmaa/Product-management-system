@@ -1,0 +1,35 @@
+<html xmlns:th="http://www.thymeleaf.org">
+ <body>
+  <div th:insert="menu.html"></div>
+	<form action="update-record" method="post">
+	<input type='hidden' th:value='${product.pid}' name='pid'>
+		<table class='tar' border='1' cellpadding='8px'>
+		 <tr style='background-color:orange;color:white;font-size:25px'>
+		  <th colspan="2">Product details</th>
+		 </tr>
+		 <tr>
+		  <th align="left">Product id</th>
+		  <td th:text="${product.pid}"></td>
+		 </tr>
+		 <tr>
+		  <th align="left">Edit product name</th>
+		  <td><input type='text' name='name' th:value='${product.name}' class='tb' style='width:100%'></td>
+		 </tr>
+		 <tr>
+		  <th align="left">Edit product brand</th>
+		  <td><input type='text' name='brand' th:value=' ${product.brand}' class='tb' style='width:100%'></td>
+		 </tr>
+		 <tr>
+		  <th align="left">Edit product price</th>
+		 <td><input type='text' name='price' th:value=' ${product.price}' class='tb' style='width:100%'></td>
+		 </tr>
+		 <tr>
+		  <td colspan="2" align="right">
+		   <button class='bt' style='background-color:green'>Update</button>
+		   <input type='button' style='background-color:red' class='bt' value='Cancel' onclick='history.back()'>
+		  </td>
+		 </tr>
+		</table>
+		</form>
+ </body>
+</html>
